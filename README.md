@@ -1,6 +1,6 @@
 # Data Center Carbon Footprint: NREL ESIF Analysis
 
-Code and data for *Carbon Footprint of Cloud Computing: The Hidden Environmental Cost of Digital Infrastructure* (A. Sastry).
+Code and data for *Carbon Footprint of Cloud Computing: The Hidden Environmental Cost of Digital Infrastructure* (asas).
 
 The analysis uses the NREL Energy Systems Integration Facility (ESIF) high-performance computing data center dataset (Clark & Strelka, OEDI submission 8616, CC BY 4.0).
 
