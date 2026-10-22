@@ -1,0 +1,1666 @@
+{
+  "n_observations": 66925,
+  "date_range_utc": [
+    "2016-06-12 06:00:00",
+    "2025-08-29 04:00:00"
+  ],
+  "cleaning": {
+    "median_reading_interval_s": 60.0,
+    "raw_power_rows": 4569543,
+    "raw_weather_rows": 4034917,
+    "weather_rows_removed": 2059,
+    "power_rows_missing_or_negative": 136973,
+    "power_rows_pue_out_of_range": 564,
+    "hourly_observations": 66925,
+    "date_range_utc": [
+      "2016-06-12 06:00:00",
+      "2025-08-29 04:00:00"
+    ],
+    "hourly_coverage_of_span": 0.8287,
+    "subsampled_hourly_observations": 68204
+  },
+  "descriptive": {
+    "it_power_kw": {
+      "mean": 1543.852,
+      "std": 802.973,
+      "min": 107.902,
+      "max": 3895.762
+    },
+    "cooling_kw": {
+      "mean": 12.051,
+      "std": 9.298,
+      "min": 0.0,
+      "max": 62.068
+    },
+    "hvac_kw": {
+      "mean": 34.099,
+      "std": 55.356,
+      "min": 2.485,
+      "max": 216.729
+    },
+    "pump_kw": {
+      "mean": 21.258,
+      "std": 14.212,
+      "min": 0.0,
+      "max": 65.75
+    },
+    "plug_and_light_kw": {
+      "mean": 3.398,
+      "std": 1.954,
+      "min": 0.0,
+      "max": 12.435
+    },
+    "overhead_kw": {
+      "mean": 70.806,
+      "std": 65.386,
+      "min": 8.46,
+      "max": 306.957
+    },
+    "pue": {
+      "mean": 1.044,
+      "std": 0.03,
+      "min": 1.003,
+      "max": 1.49
+    },
+    "outdoor_air_temp": {
+      "mean": 53.511,
+      "std": 19.271,
+      "min": -11.184,
+      "max": 103.126
+    },
+    "outdoor_air_humidity": {
+      "mean": 42.079,
+      "std": 16.949,
+      "min": 0.0,
+      "max": 100.0
+    }
+  },
+  "overhead_ratios": {
+    "overhead_as_pct_of_it": 4.59,
+    "overhead_as_pct_of_total": 4.39,
+    "energy_weighted_pue": 1.0459
+  },
+  "correlations": {
+    "cooling_kw": {
+      "r": 0.2085,
+      "r_squared": 0.0435,
+      "p_value": 0.0,
+      "n": 66925,
+      "fisher_ci_low": 0.2013,
+      "fisher_ci_high": 0.2158,
+      "block_bootstrap_ci_low": 0.1401,
+      "block_bootstrap_ci_high": 0.2644,
+      "lag1_autocorr_temp": 0.989,
+      "lag1_autocorr_target": 0.97,
+      "effective_n_approx": 1392
+    },
+    "pump_kw": {
+      "r": 0.1683,
+      "r_squared": 0.0283,
+      "p_value": 0.0,
+      "n": 66925,
+      "fisher_ci_low": 0.161,
+      "fisher_ci_high": 0.1757,
+      "block_bootstrap_ci_low": 0.0816,
+      "block_bootstrap_ci_high": 0.2576,
+      "lag1_autocorr_temp": 0.989,
+      "lag1_autocorr_target": 0.997,
+      "effective_n_approx": 464
+    },
+    "hvac_kw": {
+      "r": 0.0885,
+      "r_squared": 0.0078,
+      "p_value": 2.06e-116,
+      "n": 66925,
+      "fisher_ci_low": 0.081,
+      "fisher_ci_high": 0.096,
+      "block_bootstrap_ci_low": 0.0171,
+      "block_bootstrap_ci_high": 0.1584,
+      "lag1_autocorr_temp": 0.989,
+      "lag1_autocorr_target": 1.0,
+      "effective_n_approx": 363
+    },
+    "plug_and_light_kw": {
+      "r": -0.3209,
+      "r_squared": 0.103,
+      "p_value": 0.0,
+      "n": 66925,
+      "fisher_ci_low": -0.3277,
+      "fisher_ci_high": -0.3141,
+      "block_bootstrap_ci_low": -0.3537,
+      "block_bootstrap_ci_high": -0.2839,
+      "lag1_autocorr_temp": 0.989,
+      "lag1_autocorr_target": 0.915,
+      "effective_n_approx": 3321
+    },
+    "overhead_kw": {
+      "r": 0.1316,
+      "r_squared": 0.0173,
+      "p_value": 4.37e-256,
+      "n": 66925,
+      "fisher_ci_low": 0.1241,
+      "fisher_ci_high": 0.139,
+      "block_bootstrap_ci_low": 0.0558,
+      "block_bootstrap_ci_high": 0.2051,
+      "lag1_autocorr_temp": 0.989,
+      "lag1_autocorr_target": 0.999,
+      "effective_n_approx": 393
+    },
+    "pue": {
+      "r": 0.1154,
+      "r_squared": 0.0133,
+      "p_value": 3.27e-197,
+      "n": 66925,
+      "fisher_ci_low": 0.1079,
+      "fisher_ci_high": 0.1229,
+      "block_bootstrap_ci_low": 0.054,
+      "block_bootstrap_ci_high": 0.1868,
+      "lag1_autocorr_temp": 0.989,
+      "lag1_autocorr_target": 0.988,
+      "effective_n_approx": 770
+    }
+  },
+  "model_a": {
+    "label": "PUE",
+    "features": [
+      "outdoor_air_temp",
+      "outdoor_air_humidity"
+    ],
+    "target": "pue",
+    "n": 66925,
+    "linear": {
+      "random_split": {
+        "r2": 0.0135,
+        "mae": 0.0181,
+        "rmse": 0.031
+      },
+      "chronological_split": {
+        "r2": -0.8868,
+        "mae": 0.0458,
+        "rmse": 0.0637,
+        "test_start": "2024-01-29 20:00:00"
+      },
+      "rolling_origin": {
+        "folds": {
+          "2019": {
+            "r2": 0.0163,
+            "mae": 0.0064,
+            "rmse": 0.0096
+          },
+          "2020": {
+            "r2": -0.0068,
+            "mae": 0.0071,
+            "rmse": 0.016
+          },
+          "2021": {
+            "r2": -0.0065,
+            "mae": 0.0099,
+            "rmse": 0.0246
+          },
+          "2022": {
+            "r2": -0.1663,
+            "mae": 0.0091,
+            "rmse": 0.0154
+          },
+          "2023": {
+            "r2": -0.053,
+            "mae": 0.0143,
+            "rmse": 0.0173
+          },
+          "2024": {
+            "r2": -0.6534,
+            "mae": 0.0529,
+            "rmse": 0.0753
+          },
+          "2025": {
+            "r2": -3.1854,
+            "mae": 0.0242,
+            "rmse": 0.0277
+          }
+        },
+        "mean_r2": -0.5793,
+        "median_r2": -0.053,
+        "min_r2": -3.1854,
+        "max_r2": 0.0163
+      }
+    },
+    "random_forest": {
+      "random_split": {
+        "r2": 0.0144,
+        "mae": 0.0179,
+        "rmse": 0.031
+      },
+      "chronological_split": {
+        "r2": -0.8914,
+        "mae": 0.0458,
+        "rmse": 0.0638,
+        "test_start": "2024-01-29 20:00:00"
+      },
+      "rolling_origin": {
+        "folds": {
+          "2019": {
+            "r2": 0.0823,
+            "mae": 0.0061,
+            "rmse": 0.0093
+          },
+          "2020": {
+            "r2": 0.0406,
+            "mae": 0.0063,
+            "rmse": 0.0156
+          },
+          "2021": {
+            "r2": 0.0403,
+            "mae": 0.0095,
+            "rmse": 0.024
+          },
+          "2022": {
+            "r2": -0.1395,
+            "mae": 0.0093,
+            "rmse": 0.0152
+          },
+          "2023": {
+            "r2": -0.0141,
+            "mae": 0.0137,
+            "rmse": 0.017
+          },
+          "2024": {
+            "r2": -0.6624,
+            "mae": 0.0533,
+            "rmse": 0.0755
+          },
+          "2025": {
+            "r2": -3.4021,
+            "mae": 0.0246,
+            "rmse": 0.0284
+          }
+        },
+        "mean_r2": -0.5793,
+        "median_r2": -0.0141,
+        "min_r2": -3.4021,
+        "max_r2": 0.0823
+      }
+    },
+    "gradient_boosting": {
+      "random_split": {
+        "r2": 0.0181,
+        "mae": 0.0178,
+        "rmse": 0.0309
+      },
+      "chronological_split": {
+        "r2": -0.8877,
+        "mae": 0.0458,
+        "rmse": 0.0637,
+        "test_start": "2024-01-29 20:00:00"
+      },
+      "rolling_origin": {
+        "folds": {
+          "2019": {
+            "r2": 0.101,
+            "mae": 0.006,
+            "rmse": 0.0092
+          },
+          "2020": {
+            "r2": 0.0484,
+            "mae": 0.0062,
+            "rmse": 0.0155
+          },
+          "2021": {
+            "r2": 0.0429,
+            "mae": 0.0094,
+            "rmse": 0.024
+          },
+          "2022": {
+            "r2": -0.1365,
+            "mae": 0.0092,
+            "rmse": 0.0152
+          },
+          "2023": {
+            "r2": 0.0163,
+            "mae": 0.0136,
+            "rmse": 0.0167
+          },
+          "2024": {
+            "r2": -0.6585,
+            "mae": 0.0532,
+            "rmse": 0.0754
+          },
+          "2025": {
+            "r2": -3.2906,
+            "mae": 0.0244,
+            "rmse": 0.028
+          }
+        },
+        "mean_r2": -0.5539,
+        "median_r2": 0.0163,
+        "min_r2": -3.2906,
+        "max_r2": 0.101
+      }
+    }
+  },
+  "model_b": {
+    "label": "Cooling power (kW)",
+    "features": [
+      "outdoor_air_temp",
+      "outdoor_air_humidity",
+      "it_power_kw"
+    ],
+    "target": "cooling_kw",
+    "n": 66925,
+    "linear": {
+      "random_split": {
+        "r2": 0.1168,
+        "mae": 6.3011,
+        "rmse": 8.5013
+      },
+      "chronological_split": {
+        "r2": -0.0448,
+        "mae": 10.9042,
+        "rmse": 12.9876,
+        "test_start": "2024-01-29 20:00:00"
+      },
+      "rolling_origin": {
+        "folds": {
+          "2019": {
+            "r2": 0.1043,
+            "mae": 3.3359,
+            "rmse": 4.1521
+          },
+          "2020": {
+            "r2": 0.153,
+            "mae": 3.1422,
+            "rmse": 3.8842
+          },
+          "2021": {
+            "r2": -0.0405,
+            "mae": 4.4254,
+            "rmse": 5.8104
+          },
+          "2022": {
+            "r2": 0.0344,
+            "mae": 4.1579,
+            "rmse": 5.5764
+          },
+          "2023": {
+            "r2": -0.2373,
+            "mae": 13.4993,
+            "rmse": 17.3547
+          },
+          "2024": {
+            "r2": -0.5059,
+            "mae": 12.1886,
+            "rmse": 13.5882
+          },
+          "2025": {
+            "r2": 0.1799,
+            "mae": 8.5836,
+            "rmse": 12.6477
+          }
+        },
+        "mean_r2": -0.0446,
+        "median_r2": 0.0344,
+        "min_r2": -0.5059,
+        "max_r2": 0.1799
+      }
+    },
+    "random_forest": {
+      "random_split": {
+        "r2": 0.776,
+        "mae": 2.3941,
+        "rmse": 4.2813
+      },
+      "chronological_split": {
+        "r2": 0.1306,
+        "mae": 8.4435,
+        "rmse": 11.8474,
+        "test_start": "2024-01-29 20:00:00"
+      },
+      "rolling_origin": {
+        "folds": {
+          "2019": {
+            "r2": 0.5457,
+            "mae": 1.7714,
+            "rmse": 2.9569
+          },
+          "2020": {
+            "r2": 0.5389,
+            "mae": 1.8968,
+            "rmse": 2.8659
+          },
+          "2021": {
+            "r2": 0.5829,
+            "mae": 2.2406,
+            "rmse": 3.6787
+          },
+          "2022": {
+            "r2": 0.5557,
+            "mae": 2.2964,
+            "rmse": 3.7826
+          },
+          "2023": {
+            "r2": -0.0829,
+            "mae": 12.2907,
+            "rmse": 16.2355
+          },
+          "2024": {
+            "r2": -0.1676,
+            "mae": 8.7522,
+            "rmse": 11.9649
+          },
+          "2025": {
+            "r2": 0.6553,
+            "mae": 5.2052,
+            "rmse": 8.1995
+          }
+        },
+        "mean_r2": 0.3754,
+        "median_r2": 0.5457,
+        "min_r2": -0.1676,
+        "max_r2": 0.6553
+      }
+    },
+    "gradient_boosting": {
+      "random_split": {
+        "r2": 0.7626,
+        "mae": 2.6315,
+        "rmse": 4.4077
+      },
+      "chronological_split": {
+        "r2": 0.1819,
+        "mae": 8.1755,
+        "rmse": 11.4926,
+        "test_start": "2024-01-29 20:00:00"
+      },
+      "rolling_origin": {
+        "folds": {
+          "2019": {
+            "r2": 0.5733,
+            "mae": 1.7427,
+            "rmse": 2.8658
+          },
+          "2020": {
+            "r2": 0.5272,
+            "mae": 1.9124,
+            "rmse": 2.902
+          },
+          "2021": {
+            "r2": 0.597,
+            "mae": 2.2142,
+            "rmse": 3.6161
+          },
+          "2022": {
+            "r2": 0.5746,
+            "mae": 2.2465,
+            "rmse": 3.7012
+          },
+          "2023": {
+            "r2": -0.001,
+            "mae": 11.8727,
+            "rmse": 15.6093
+          },
+          "2024": {
+            "r2": -0.114,
+            "mae": 8.5543,
+            "rmse": 11.6871
+          },
+          "2025": {
+            "r2": 0.6588,
+            "mae": 5.3754,
+            "rmse": 8.1577
+          }
+        },
+        "mean_r2": 0.4023,
+        "median_r2": 0.5733,
+        "min_r2": -0.114,
+        "max_r2": 0.6588
+      }
+    },
+    "rf_importance": {
+      "original_random_split_seed42": {
+        "impurity": {
+          "outdoor_air_temp": 0.4541,
+          "outdoor_air_humidity": 0.1913,
+          "it_power_kw": 0.3546
+        },
+        "permutation_r2_drop": {
+          "outdoor_air_temp": 1.6523,
+          "outdoor_air_humidity": 0.7094,
+          "it_power_kw": 0.9845
+        }
+      },
+      "rolling_origin_folds": {
+        "impurity": {
+          "outdoor_air_temp": {
+            "mean": 0.5872,
+            "sd": 0.0646,
+            "share_mean": 0.5872,
+            "share_sd": 0.0646
+          },
+          "outdoor_air_humidity": {
+            "mean": 0.1743,
+            "sd": 0.0101,
+            "share_mean": 0.1743,
+            "share_sd": 0.0101
+          },
+          "it_power_kw": {
+            "mean": 0.2385,
+            "sd": 0.0614,
+            "share_mean": 0.2385,
+            "share_sd": 0.0614
+          },
+          "n_folds_used_for_share": 7,
+          "rank_order_counts": {
+            "outdoor_air_temp > it_power_kw > outdoor_air_humidity": 7
+          }
+        },
+        "permutation_r2_drop": {
+          "outdoor_air_temp": {
+            "mean": 1.3697,
+            "sd": 0.5472,
+            "share_mean": 0.7049,
+            "share_sd": 0.0803
+          },
+          "outdoor_air_humidity": {
+            "mean": 0.4956,
+            "sd": 0.3044,
+            "share_mean": 0.2228,
+            "share_sd": 0.12
+          },
+          "it_power_kw": {
+            "mean": 0.0816,
+            "sd": 0.0468,
+            "share_mean": 0.0723,
+            "share_sd": 0.0957
+          },
+          "n_folds_used_for_share": 7,
+          "rank_order_counts": {
+            "outdoor_air_temp > outdoor_air_humidity > it_power_kw": 6,
+            "outdoor_air_temp > it_power_kw > outdoor_air_humidity": 1
+          }
+        },
+        "per_fold": [
+          {
+            "impurity": {
+              "outdoor_air_temp": 0.6344,
+              "outdoor_air_humidity": 0.1744,
+              "it_power_kw": 0.1912
+            },
+            "permutation_r2_drop": {
+              "outdoor_air_temp": 1.5085,
+              "outdoor_air_humidity": 0.6461,
+              "it_power_kw": 0.152
+            }
+          },
+          {
+            "impurity": {
+              "outdoor_air_temp": 0.6209,
+              "outdoor_air_humidity": 0.1763,
+              "it_power_kw": 0.2029
+            },
+            "permutation_r2_drop": {
+              "outdoor_air_temp": 1.5693,
+              "outdoor_air_humidity": 0.8127,
+              "it_power_kw": 0.1375
+            }
+          },
+          {
+            "impurity": {
+              "outdoor_air_temp": 0.6385,
+              "outdoor_air_humidity": 0.1603,
+              "it_power_kw": 0.2012
+            },
+            "permutation_r2_drop": {
+              "outdoor_air_temp": 1.3306,
+              "outdoor_air_humidity": 0.5976,
+              "it_power_kw": 0.0824
+            }
+          },
+          {
+            "impurity": {
+              "outdoor_air_temp": 0.6188,
+              "outdoor_air_humidity": 0.1657,
+              "it_power_kw": 0.2155
+            },
+            "permutation_r2_drop": {
+              "outdoor_air_temp": 1.5345,
+              "outdoor_air_humidity": 0.6998,
+              "it_power_kw": 0.0587
+            }
+          },
+          {
+            "impurity": {
+              "outdoor_air_temp": 0.6071,
+              "outdoor_air_humidity": 0.182,
+              "it_power_kw": 0.211
+            },
+            "permutation_r2_drop": {
+              "outdoor_air_temp": 0.171,
+              "outdoor_air_humidity": -0.0656,
+              "it_power_kw": 0.0682
+            }
+          },
+          {
+            "impurity": {
+              "outdoor_air_temp": 0.475,
+              "outdoor_air_humidity": 0.1707,
+              "it_power_kw": 0.3543
+            },
+            "permutation_r2_drop": {
+              "outdoor_air_temp": 1.7697,
+              "outdoor_air_humidity": 0.2427,
+              "it_power_kw": 0.0464
+            }
+          },
+          {
+            "impurity": {
+              "outdoor_air_temp": 0.5158,
+              "outdoor_air_humidity": 0.1905,
+              "it_power_kw": 0.2937
+            },
+            "permutation_r2_drop": {
+              "outdoor_air_temp": 1.704,
+              "outdoor_air_humidity": 0.5362,
+              "it_power_kw": 0.0258
+            }
+          }
+        ]
+      },
+      "repeated_random_splits": {
+        "impurity": {
+          "outdoor_air_temp": {
+            "mean": 0.435,
+            "sd": 0.0334,
+            "share_mean": 0.435,
+            "share_sd": 0.0334
+          },
+          "outdoor_air_humidity": {
+            "mean": 0.1867,
+            "sd": 0.0062,
+            "share_mean": 0.1867,
+            "share_sd": 0.0062
+          },
+          "it_power_kw": {
+            "mean": 0.3784,
+            "sd": 0.0395,
+            "share_mean": 0.3784,
+            "share_sd": 0.0395
+          },
+          "n_folds_used_for_share": 10,
+          "rank_order_counts": {
+            "outdoor_air_temp > it_power_kw > outdoor_air_humidity": 8,
+            "it_power_kw > outdoor_air_temp > outdoor_air_humidity": 2
+          }
+        },
+        "permutation_r2_drop": {
+          "outdoor_air_temp": {
+            "mean": 1.6155,
+            "sd": 0.022,
+            "share_mean": 0.4923,
+            "share_sd": 0.0029
+          },
+          "outdoor_air_humidity": {
+            "mean": 0.699,
+            "sd": 0.0208,
+            "share_mean": 0.213,
+            "share_sd": 0.0045
+          },
+          "it_power_kw": {
+            "mean": 0.967,
+            "sd": 0.0106,
+            "share_mean": 0.2947,
+            "share_sd": 0.0034
+          },
+          "n_folds_used_for_share": 10,
+          "rank_order_counts": {
+            "outdoor_air_temp > it_power_kw > outdoor_air_humidity": 10
+          }
+        },
+        "per_fold": [
+          {
+            "impurity": {
+              "outdoor_air_temp": 0.4541,
+              "outdoor_air_humidity": 0.1913,
+              "it_power_kw": 0.3546
+            },
+            "permutation_r2_drop": {
+              "outdoor_air_temp": 1.6523,
+              "outdoor_air_humidity": 0.7094,
+              "it_power_kw": 0.9845
+            }
+          },
+          {
+            "impurity": {
+              "outdoor_air_temp": 0.4908,
+              "outdoor_air_humidity": 0.1963,
+              "it_power_kw": 0.313
+            },
+            "permutation_r2_drop": {
+              "outdoor_air_temp": 1.5961,
+              "outdoor_air_humidity": 0.6895,
+              "it_power_kw": 0.9497
+            }
+          },
+          {
+            "impurity": {
+              "outdoor_air_temp": 0.4514,
+              "outdoor_air_humidity": 0.188,
+              "it_power_kw": 0.3606
+            },
+            "permutation_r2_drop": {
+              "outdoor_air_temp": 1.5811,
+              "outdoor_air_humidity": 0.6727,
+              "it_power_kw": 0.9722
+            }
+          },
+          {
+            "impurity": {
+              "outdoor_air_temp": 0.3965,
+              "outdoor_air_humidity": 0.1812,
+              "it_power_kw": 0.4224
+            },
+            "permutation_r2_drop": {
+              "outdoor_air_temp": 1.6043,
+              "outdoor_air_humidity": 0.6755,
+              "it_power_kw": 0.9692
+            }
+          },
+          {
+            "impurity": {
+              "outdoor_air_temp": 0.4435,
+              "outdoor_air_humidity": 0.1891,
+              "it_power_kw": 0.3674
+            },
+            "permutation_r2_drop": {
+              "outdoor_air_temp": 1.6146,
+              "outdoor_air_humidity": 0.7192,
+              "it_power_kw": 0.9781
+            }
+          },
+          {
+            "impurity": {
+              "outdoor_air_temp": 0.4436,
+              "outdoor_air_humidity": 0.1874,
+              "it_power_kw": 0.369
+            },
+            "permutation_r2_drop": {
+              "outdoor_air_temp": 1.6315,
+              "outdoor_air_humidity": 0.7321,
+              "it_power_kw": 0.9666
+            }
+          },
+          {
+            "impurity": {
+              "outdoor_air_temp": 0.4409,
+              "outdoor_air_humidity": 0.189,
+              "it_power_kw": 0.3701
+            },
+            "permutation_r2_drop": {
+              "outdoor_air_temp": 1.612,
+              "outdoor_air_humidity": 0.6755,
+              "it_power_kw": 0.9655
+            }
+          },
+          {
+            "impurity": {
+              "outdoor_air_temp": 0.3695,
+              "outdoor_air_humidity": 0.1739,
+              "it_power_kw": 0.4566
+            },
+            "permutation_r2_drop": {
+              "outdoor_air_temp": 1.601,
+              "outdoor_air_humidity": 0.7075,
+              "it_power_kw": 0.955
+            }
+          },
+          {
+            "impurity": {
+              "outdoor_air_temp": 0.4181,
+              "outdoor_air_humidity": 0.1821,
+              "it_power_kw": 0.3998
+            },
+            "permutation_r2_drop": {
+              "outdoor_air_temp": 1.6185,
+              "outdoor_air_humidity": 0.7158,
+              "it_power_kw": 0.9581
+            }
+          },
+          {
+            "impurity": {
+              "outdoor_air_temp": 0.4412,
+              "outdoor_air_humidity": 0.1884,
+              "it_power_kw": 0.3704
+            },
+            "permutation_r2_drop": {
+              "outdoor_air_temp": 1.644,
+              "outdoor_air_humidity": 0.6931,
+              "it_power_kw": 0.971
+            }
+          }
+        ]
+      }
+    }
+  },
+  "model_c": {
+    "label": "Total overhead power (kW)",
+    "features": [
+      "outdoor_air_temp",
+      "outdoor_air_humidity",
+      "it_power_kw"
+    ],
+    "target": "overhead_kw",
+    "n": 66925,
+    "linear": {
+      "random_split": {
+        "r2": 0.5103,
+        "mae": 29.4036,
+        "rmse": 45.7129
+      },
+      "chronological_split": {
+        "r2": -4.9843,
+        "mae": 122.8232,
+        "rmse": 132.6543,
+        "test_start": "2024-01-29 20:00:00"
+      },
+      "rolling_origin": {
+        "folds": {
+          "2019": {
+            "r2": 0.159,
+            "mae": 6.0488,
+            "rmse": 7.9611
+          },
+          "2020": {
+            "r2": 0.0707,
+            "mae": 4.8793,
+            "rmse": 5.882
+          },
+          "2021": {
+            "r2": -0.0944,
+            "mae": 6.3029,
+            "rmse": 8.9383
+          },
+          "2022": {
+            "r2": -0.9996,
+            "mae": 11.4263,
+            "rmse": 14.8404
+          },
+          "2023": {
+            "r2": -1.2539,
+            "mae": 24.385,
+            "rmse": 28.6275
+          },
+          "2024": {
+            "r2": -2.8599,
+            "mae": 127.9694,
+            "rmse": 144.3455
+          },
+          "2025": {
+            "r2": -11.8344,
+            "mae": 46.7453,
+            "rmse": 49.5647
+          }
+        },
+        "mean_r2": -2.4018,
+        "median_r2": -0.9996,
+        "min_r2": -11.8344,
+        "max_r2": 0.159
+      }
+    },
+    "random_forest": {
+      "random_split": {
+        "r2": 0.8196,
+        "mae": 14.0329,
+        "rmse": 27.7489
+      },
+      "chronological_split": {
+        "r2": -4.608,
+        "mae": 117.4369,
+        "rmse": 128.4156,
+        "test_start": "2024-01-29 20:00:00"
+      },
+      "rolling_origin": {
+        "folds": {
+          "2019": {
+            "r2": -0.0829,
+            "mae": 7.2334,
+            "rmse": 9.0335
+          },
+          "2020": {
+            "r2": 0.3415,
+            "mae": 3.6209,
+            "rmse": 4.9512
+          },
+          "2021": {
+            "r2": 0.2396,
+            "mae": 5.6025,
+            "rmse": 7.4506
+          },
+          "2022": {
+            "r2": -0.751,
+            "mae": 11.0569,
+            "rmse": 13.8872
+          },
+          "2023": {
+            "r2": -2.1135,
+            "mae": 28.9123,
+            "rmse": 33.646
+          },
+          "2024": {
+            "r2": -2.7279,
+            "mae": 124.2531,
+            "rmse": 141.855
+          },
+          "2025": {
+            "r2": -14.4149,
+            "mae": 48.8885,
+            "rmse": 54.3194
+          }
+        },
+        "mean_r2": -2.787,
+        "median_r2": -0.751,
+        "min_r2": -14.4149,
+        "max_r2": 0.3415
+      }
+    },
+    "gradient_boosting": {
+      "random_split": {
+        "r2": 0.7961,
+        "mae": 15.7194,
+        "rmse": 29.4971
+      },
+      "chronological_split": {
+        "r2": -4.6344,
+        "mae": 117.8441,
+        "rmse": 128.7176,
+        "test_start": "2024-01-29 20:00:00"
+      },
+      "rolling_origin": {
+        "folds": {
+          "2019": {
+            "r2": -0.0336,
+            "mae": 7.0499,
+            "rmse": 8.8257
+          },
+          "2020": {
+            "r2": 0.4176,
+            "mae": 3.3724,
+            "rmse": 4.6566
+          },
+          "2021": {
+            "r2": 0.2838,
+            "mae": 5.4213,
+            "rmse": 7.2307
+          },
+          "2022": {
+            "r2": -0.7215,
+            "mae": 10.9317,
+            "rmse": 13.7697
+          },
+          "2023": {
+            "r2": -1.9742,
+            "mae": 27.9883,
+            "rmse": 32.8847
+          },
+          "2024": {
+            "r2": -2.7379,
+            "mae": 124.5742,
+            "rmse": 142.0461
+          },
+          "2025": {
+            "r2": -13.2343,
+            "mae": 48.0756,
+            "rmse": 52.1978
+          }
+        },
+        "mean_r2": -2.5714,
+        "median_r2": -0.7215,
+        "min_r2": -13.2343,
+        "max_r2": 0.4176
+      }
+    },
+    "rf_importance": {
+      "original_random_split_seed42": {
+        "impurity": {
+          "outdoor_air_temp": 0.0949,
+          "outdoor_air_humidity": 0.0748,
+          "it_power_kw": 0.8302
+        },
+        "permutation_r2_drop": {
+          "outdoor_air_temp": 0.24,
+          "outdoor_air_humidity": 0.125,
+          "it_power_kw": 1.624
+        }
+      },
+      "rolling_origin_folds": {
+        "impurity": {
+          "outdoor_air_temp": {
+            "mean": 0.2619,
+            "sd": 0.0795,
+            "share_mean": 0.2619,
+            "share_sd": 0.0795
+          },
+          "outdoor_air_humidity": {
+            "mean": 0.1563,
+            "sd": 0.0436,
+            "share_mean": 0.1563,
+            "share_sd": 0.0436
+          },
+          "it_power_kw": {
+            "mean": 0.5818,
+            "sd": 0.1215,
+            "share_mean": 0.5818,
+            "share_sd": 0.1215
+          },
+          "n_folds_used_for_share": 7,
+          "rank_order_counts": {
+            "it_power_kw > outdoor_air_temp > outdoor_air_humidity": 7
+          }
+        },
+        "permutation_r2_drop": {
+          "outdoor_air_temp": {
+            "mean": 0.799,
+            "sd": 0.6123,
+            "share_mean": 0.639,
+            "share_sd": 0.1879
+          },
+          "outdoor_air_humidity": {
+            "mean": 0.312,
+            "sd": 0.3997,
+            "share_mean": 0.2004,
+            "share_sd": 0.0763
+          },
+          "it_power_kw": {
+            "mean": 0.2929,
+            "sd": 0.5491,
+            "share_mean": 0.1606,
+            "share_sd": 0.1482
+          },
+          "n_folds_used_for_share": 6,
+          "rank_order_counts": {
+            "outdoor_air_temp > outdoor_air_humidity > it_power_kw": 3,
+            "outdoor_air_temp > it_power_kw > outdoor_air_humidity": 4
+          }
+        },
+        "per_fold": [
+          {
+            "impurity": {
+              "outdoor_air_temp": 0.2608,
+              "outdoor_air_humidity": 0.1413,
+              "it_power_kw": 0.5979
+            },
+            "permutation_r2_drop": {
+              "outdoor_air_temp": 0.4074,
+              "outdoor_air_humidity": 0.1728,
+              "it_power_kw": 0.2737
+            }
+          },
+          {
+            "impurity": {
+              "outdoor_air_temp": 0.2838,
+              "outdoor_air_humidity": 0.1712,
+              "it_power_kw": 0.545
+            },
+            "permutation_r2_drop": {
+              "outdoor_air_temp": 1.3246,
+              "outdoor_air_humidity": 0.518,
+              "it_power_kw": 0.198
+            }
+          },
+          {
+            "impurity": {
+              "outdoor_air_temp": 0.3236,
+              "outdoor_air_humidity": 0.1746,
+              "it_power_kw": 0.5017
+            },
+            "permutation_r2_drop": {
+              "outdoor_air_temp": 1.2647,
+              "outdoor_air_humidity": 0.5515,
+              "it_power_kw": 0.1913
+            }
+          },
+          {
+            "impurity": {
+              "outdoor_air_temp": 0.3352,
+              "outdoor_air_humidity": 0.1931,
+              "it_power_kw": 0.4718
+            },
+            "permutation_r2_drop": {
+              "outdoor_air_temp": 0.8605,
+              "outdoor_air_humidity": 0.1641,
+              "it_power_kw": 0.0054
+            }
+          },
+          {
+            "impurity": {
+              "outdoor_air_temp": 0.3161,
+              "outdoor_air_humidity": 0.2104,
+              "it_power_kw": 0.4735
+            },
+            "permutation_r2_drop": {
+              "outdoor_air_temp": -0.0087,
+              "outdoor_air_humidity": -0.2187,
+              "it_power_kw": -0.1312
+            }
+          },
+          {
+            "impurity": {
+              "outdoor_air_temp": 0.1978,
+              "outdoor_air_humidity": 0.1148,
+              "it_power_kw": 0.6874
+            },
+            "permutation_r2_drop": {
+              "outdoor_air_temp": 0.1881,
+              "outdoor_air_humidity": 0.0152,
+              "it_power_kw": 0.0163
+            }
+          },
+          {
+            "impurity": {
+              "outdoor_air_temp": 0.1163,
+              "outdoor_air_humidity": 0.0885,
+              "it_power_kw": 0.7952
+            },
+            "permutation_r2_drop": {
+              "outdoor_air_temp": 1.5562,
+              "outdoor_air_humidity": 0.9812,
+              "it_power_kw": 1.4971
+            }
+          }
+        ]
+      },
+      "repeated_random_splits": {
+        "impurity": {
+          "outdoor_air_temp": {
+            "mean": 0.0943,
+            "sd": 0.0009,
+            "share_mean": 0.0943,
+            "share_sd": 0.0009
+          },
+          "outdoor_air_humidity": {
+            "mean": 0.0747,
+            "sd": 0.0007,
+            "share_mean": 0.0747,
+            "share_sd": 0.0007
+          },
+          "it_power_kw": {
+            "mean": 0.831,
+            "sd": 0.0013,
+            "share_mean": 0.831,
+            "share_sd": 0.0013
+          },
+          "n_folds_used_for_share": 10,
+          "rank_order_counts": {
+            "it_power_kw > outdoor_air_temp > outdoor_air_humidity": 10
+          }
+        },
+        "permutation_r2_drop": {
+          "outdoor_air_temp": {
+            "mean": 0.239,
+            "sd": 0.009,
+            "share_mean": 0.1201,
+            "share_sd": 0.0041
+          },
+          "outdoor_air_humidity": {
+            "mean": 0.123,
+            "sd": 0.0053,
+            "share_mean": 0.0618,
+            "share_sd": 0.0023
+          },
+          "it_power_kw": {
+            "mean": 1.6278,
+            "sd": 0.0131,
+            "share_mean": 0.8181,
+            "share_sd": 0.0038
+          },
+          "n_folds_used_for_share": 10,
+          "rank_order_counts": {
+            "it_power_kw > outdoor_air_temp > outdoor_air_humidity": 10
+          }
+        },
+        "per_fold": [
+          {
+            "impurity": {
+              "outdoor_air_temp": 0.0949,
+              "outdoor_air_humidity": 0.0748,
+              "it_power_kw": 0.8302
+            },
+            "permutation_r2_drop": {
+              "outdoor_air_temp": 0.24,
+              "outdoor_air_humidity": 0.125,
+              "it_power_kw": 1.624
+            }
+          },
+          {
+            "impurity": {
+              "outdoor_air_temp": 0.0929,
+              "outdoor_air_humidity": 0.0748,
+              "it_power_kw": 0.8323
+            },
+            "permutation_r2_drop": {
+              "outdoor_air_temp": 0.2356,
+              "outdoor_air_humidity": 0.115,
+              "it_power_kw": 1.6019
+            }
+          },
+          {
+            "impurity": {
+              "outdoor_air_temp": 0.0948,
+              "outdoor_air_humidity": 0.0761,
+              "it_power_kw": 0.8291
+            },
+            "permutation_r2_drop": {
+              "outdoor_air_temp": 0.2352,
+              "outdoor_air_humidity": 0.1234,
+              "it_power_kw": 1.6495
+            }
+          },
+          {
+            "impurity": {
+              "outdoor_air_temp": 0.0937,
+              "outdoor_air_humidity": 0.0742,
+              "it_power_kw": 0.8321
+            },
+            "permutation_r2_drop": {
+              "outdoor_air_temp": 0.2484,
+              "outdoor_air_humidity": 0.1195,
+              "it_power_kw": 1.6249
+            }
+          },
+          {
+            "impurity": {
+              "outdoor_air_temp": 0.0932,
+              "outdoor_air_humidity": 0.0749,
+              "it_power_kw": 0.8319
+            },
+            "permutation_r2_drop": {
+              "outdoor_air_temp": 0.237,
+              "outdoor_air_humidity": 0.1228,
+              "it_power_kw": 1.6194
+            }
+          },
+          {
+            "impurity": {
+              "outdoor_air_temp": 0.0949,
+              "outdoor_air_humidity": 0.0739,
+              "it_power_kw": 0.8311
+            },
+            "permutation_r2_drop": {
+              "outdoor_air_temp": 0.2235,
+              "outdoor_air_humidity": 0.1282,
+              "it_power_kw": 1.6335
+            }
+          },
+          {
+            "impurity": {
+              "outdoor_air_temp": 0.095,
+              "outdoor_air_humidity": 0.0747,
+              "it_power_kw": 0.8303
+            },
+            "permutation_r2_drop": {
+              "outdoor_air_temp": 0.2524,
+              "outdoor_air_humidity": 0.1313,
+              "it_power_kw": 1.6435
+            }
+          },
+          {
+            "impurity": {
+              "outdoor_air_temp": 0.0935,
+              "outdoor_air_humidity": 0.0736,
+              "it_power_kw": 0.8329
+            },
+            "permutation_r2_drop": {
+              "outdoor_air_temp": 0.25,
+              "outdoor_air_humidity": 0.1199,
+              "it_power_kw": 1.6244
+            }
+          },
+          {
+            "impurity": {
+              "outdoor_air_temp": 0.0957,
+              "outdoor_air_humidity": 0.0751,
+              "it_power_kw": 0.8292
+            },
+            "permutation_r2_drop": {
+              "outdoor_air_temp": 0.2355,
+              "outdoor_air_humidity": 0.1164,
+              "it_power_kw": 1.6263
+            }
+          },
+          {
+            "impurity": {
+              "outdoor_air_temp": 0.0941,
+              "outdoor_air_humidity": 0.0748,
+              "it_power_kw": 0.8311
+            },
+            "permutation_r2_drop": {
+              "outdoor_air_temp": 0.232,
+              "outdoor_air_humidity": 0.1282,
+              "it_power_kw": 1.6308
+            }
+          }
+        ]
+      }
+    }
+  },
+  "sampling_sensitivity": {
+    "n_hours_full": 66925,
+    "n_hours_every10th": 68204,
+    "n_common_hours": 66925,
+    "variables": {
+      "it_power_kw": {
+        "mean_full": 1543.8521,
+        "mean_every10th": 1535.1584,
+        "hourly_mean_abs_diff": 2.8605,
+        "hourly_corr_full_vs_every10th": 0.9999,
+        "within_hour_sd_ratio": 1.0
+      },
+      "cooling_kw": {
+        "mean_full": 12.0508,
+        "mean_every10th": 12.0141,
+        "hourly_mean_abs_diff": 0.121,
+        "hourly_corr_full_vs_every10th": 0.9995,
+        "within_hour_sd_ratio": 1.0007
+      },
+      "hvac_kw": {
+        "mean_full": 34.0987,
+        "mean_every10th": 33.6444,
+        "hourly_mean_abs_diff": 0.0782,
+        "hourly_corr_full_vs_every10th": 1.0,
+        "within_hour_sd_ratio": 1.0
+      },
+      "pump_kw": {
+        "mean_full": 21.2585,
+        "mean_every10th": 21.1044,
+        "hourly_mean_abs_diff": 0.1265,
+        "hourly_corr_full_vs_every10th": 0.9999,
+        "within_hour_sd_ratio": 1.0001
+      },
+      "pue": {
+        "mean_full": 1.0436,
+        "mean_every10th": 1.0435,
+        "hourly_mean_abs_diff": 0.0002,
+        "hourly_corr_full_vs_every10th": 0.9998,
+        "within_hour_sd_ratio": 0.9998
+      },
+      "outdoor_air_temp": {
+        "mean_full": 53.5108,
+        "mean_every10th": 53.5032,
+        "hourly_mean_abs_diff": 0.1566,
+        "hourly_corr_full_vs_every10th": 0.9996,
+        "within_hour_sd_ratio": 1.0006
+      }
+    },
+    "temp_cooling_r_full": 0.2085,
+    "model_b_rf_random_r2_full": 0.776,
+    "model_b_rf_chrono_r2_full": 0.1306,
+    "temp_cooling_r_every10th": 0.2046,
+    "model_b_rf_random_r2_every10th": 0.7878,
+    "model_b_rf_chrono_r2_every10th": 0.1215
+  },
+  "regime_change": {
+    "before_2024_04": {
+      "pue": 1.035,
+      "it_power_kw": 1320.324,
+      "cooling_kw": 11.68,
+      "hvac_kw": 9.612,
+      "pump_kw": 17.771,
+      "plug_and_light_kw": 3.363,
+      "overhead_kw": 42.426
+    },
+    "from_2024_04": {
+      "pue": 1.085,
+      "it_power_kw": 2570.502,
+      "cooling_kw": 13.752,
+      "hvac_kw": 146.563,
+      "pump_kw": 37.277,
+      "plug_and_light_kw": 3.558,
+      "overhead_kw": 201.15
+    },
+    "share_of_overhead_increase_by_subsystem": {
+      "cooling_kw": 0.013,
+      "hvac_kw": 0.863,
+      "pump_kw": 0.123,
+      "plug_and_light_kw": 0.001
+    }
+  },
+  "projections": {
+    "business_as_usual": {
+      "label": "Business as Usual",
+      "growth_rate": 0.12,
+      "ef_annual_decline": 0.015,
+      "years": [
+        2024,
+        2025,
+        2026,
+        2027,
+        2028,
+        2029,
+        2030
+      ],
+      "twh": [
+        415.0,
+        464.8,
+        520.6,
+        583.0,
+        653.0,
+        731.4,
+        819.1
+      ],
+      "ef_kg_per_kwh": [
+        0.445,
+        0.4383,
+        0.4318,
+        0.4253,
+        0.4189,
+        0.4126,
+        0.4064
+      ],
+      "co2_mt": [
+        184.7,
+        203.7,
+        224.8,
+        248.0,
+        273.5,
+        301.8,
+        332.9
+      ],
+      "ef_2030_reduction_vs_2024_pct": 8.7,
+      "co2_2030_change_vs_2024_pct": 80.3
+    },
+    "accelerated_ai": {
+      "label": "Accelerated AI",
+      "growth_rate": 0.15,
+      "ef_annual_decline": 0.01,
+      "years": [
+        2024,
+        2025,
+        2026,
+        2027,
+        2028,
+        2029,
+        2030
+      ],
+      "twh": [
+        415.0,
+        477.2,
+        548.8,
+        631.2,
+        725.8,
+        834.7,
+        959.9
+      ],
+      "ef_kg_per_kwh": [
+        0.445,
+        0.4406,
+        0.4361,
+        0.4318,
+        0.4275,
+        0.4232,
+        0.419
+      ],
+      "co2_mt": [
+        184.7,
+        210.3,
+        239.4,
+        272.5,
+        310.3,
+        353.2,
+        402.2
+      ],
+      "ef_2030_reduction_vs_2024_pct": 5.9,
+      "co2_2030_change_vs_2024_pct": 117.8
+    },
+    "green_transition": {
+      "label": "Green Transition",
+      "growth_rate": 0.08,
+      "ef_annual_decline": 0.11,
+      "years": [
+        2024,
+        2025,
+        2026,
+        2027,
+        2028,
+        2029,
+        2030
+      ],
+      "twh": [
+        415.0,
+        448.2,
+        484.1,
+        522.8,
+        564.6,
+        609.8,
+        658.6
+      ],
+      "ef_kg_per_kwh": [
+        0.445,
+        0.396,
+        0.3525,
+        0.3137,
+        0.2792,
+        0.2485,
+        0.2212
+      ],
+      "co2_mt": [
+        184.7,
+        177.5,
+        170.6,
+        164.0,
+        157.6,
+        151.5,
+        145.6
+      ],
+      "ef_2030_reduction_vs_2024_pct": 50.3,
+      "co2_2030_change_vs_2024_pct": -21.1
+    }
+  },
+  "projection_baseline": {
+    "base_year": 2024,
+    "base_twh": 415,
+    "base_ef_kg_per_kwh": 0.445,
+    "base_co2_mt": 184.7,
+    "iea_base_case_2030_twh": 945,
+    "iea_base_case_implied_growth": 0.147
+  },
+  "projection_sensitivity_2030_range": {
+    "accelerated_ai": {
+      "min": 325.4,
+      "max": 491.1
+    },
+    "business_as_usual": {
+      "min": 268.6,
+      "max": 407.7
+    },
+    "green_transition": {
+      "min": 117.0,
+      "max": 179.0
+    }
+  },
+  "facility_yearly": {
+    "2016": {
+      "mean_total_kw": 866.701,
+      "mean_it_kw": 837.416,
+      "hours": 4707,
+      "pue_energy_weighted": 1.035,
+      "annual_energy_mwh": 7592.298,
+      "annual_co2_tonnes": 2960.996
+    },
+    "2017": {
+      "mean_total_kw": 939.271,
+      "mean_it_kw": 909.484,
+      "hours": 7484,
+      "pue_energy_weighted": 1.033,
+      "annual_energy_mwh": 8228.015,
+      "annual_co2_tonnes": 3208.926
+    },
+    "2018": {
+      "mean_total_kw": 1195.367,
+      "mean_it_kw": 1159.46,
+      "hours": 6098,
+      "pue_energy_weighted": 1.031,
+      "annual_energy_mwh": 10471.414,
+      "annual_co2_tonnes": 4083.851
+    },
+    "2019": {
+      "mean_total_kw": 1207.961,
+      "mean_it_kw": 1172.227,
+      "hours": 6267,
+      "pue_energy_weighted": 1.03,
+      "annual_energy_mwh": 10581.736,
+      "annual_co2_tonnes": 4126.877
+    },
+    "2020": {
+      "mean_total_kw": 1082.722,
+      "mean_it_kw": 1050.093,
+      "hours": 7315,
+      "pue_energy_weighted": 1.031,
+      "annual_energy_mwh": 9484.649,
+      "annual_co2_tonnes": 3699.013
+    },
+    "2021": {
+      "mean_total_kw": 1298.599,
+      "mean_it_kw": 1260.122,
+      "hours": 5826,
+      "pue_energy_weighted": 1.031,
+      "annual_energy_mwh": 11375.723,
+      "annual_co2_tonnes": 4436.532
+    },
+    "2022": {
+      "mean_total_kw": 1269.948,
+      "mean_it_kw": 1223.249,
+      "hours": 7112,
+      "pue_energy_weighted": 1.038,
+      "annual_energy_mwh": 11124.748,
+      "annual_co2_tonnes": 4338.652
+    },
+    "2023": {
+      "mean_total_kw": 2177.496,
+      "mean_it_kw": 2105.971,
+      "hours": 8040,
+      "pue_energy_weighted": 1.034,
+      "annual_energy_mwh": 19074.867,
+      "annual_co2_tonnes": 7439.198
+    },
+    "2024": {
+      "mean_total_kw": 2923.437,
+      "mean_it_kw": 2730.82,
+      "hours": 8461,
+      "pue_energy_weighted": 1.071,
+      "annual_energy_mwh": 25609.304,
+      "annual_co2_tonnes": 9987.628
+    },
+    "2025": {
+      "mean_total_kw": 2730.61,
+      "mean_it_kw": 2564.051,
+      "hours": 5615,
+      "pue_energy_weighted": 1.065,
+      "annual_energy_mwh": 23920.14,
+      "annual_co2_tonnes": 9328.854
+    }
+  },
+  "historical_grid_intensity": {
+    "start_year": 2015,
+    "end_year": 2025,
+    "start_g_per_kwh": 533.38,
+    "end_g_per_kwh": 458.29,
+    "annual_decline": 0.0151
+  }
+}

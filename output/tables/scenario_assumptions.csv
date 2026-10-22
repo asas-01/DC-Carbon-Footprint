@@ -1,0 +1,4 @@
+scenario,assumption,growth_pct_per_yr,ef_decline_pct_per_yr,ef_2030_kg_per_kwh,twh_2030,co2_2030_mt
+Business as Usual,Recent trends continue,12.0,1.5,0.406,819,333
+Accelerated AI,AI drives faster growth; part of new demand met by fossil generation,15.0,1.0,0.419,960,402
+Green Transition,Efficiency slows growth; rapid renewable expansion,8.0,11.0,0.221,659,146

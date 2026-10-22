@@ -1,0 +1,15 @@
+{
+  "median_reading_interval_s": 60.0,
+  "raw_power_rows": 4569543,
+  "raw_weather_rows": 4034917,
+  "weather_rows_removed": 2059,
+  "power_rows_missing_or_negative": 136973,
+  "power_rows_pue_out_of_range": 564,
+  "hourly_observations": 66925,
+  "date_range_utc": [
+    "2016-06-12 06:00:00",
+    "2025-08-29 04:00:00"
+  ],
+  "hourly_coverage_of_span": 0.8287,
+  "subsampled_hourly_observations": 68204
+}
